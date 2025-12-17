@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Aleeya Anisya</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Rajdhani', sans-serif;
+  background: linear-gradient(-45deg, #1a0000, #330000, #1a0011, #330011);
+  background-size:400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(120,0,0,0.8)),
+    url('porshe.jpg') center/cover no-repeat;
+  padding:80px 20px;
+  text-align:center;
+  border-bottom:3px solid #ff1a8c;
+}
+
+header h1{
+  font-family:'Orbitron', sans-serif;
+  font-size:38px;
+  letter-spacing:3px;
+}
+header p{
+  color:#ffcccc;
+  font-style:italic;
+}
+
+/* LAYOUT */
+.container{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+nav{
+  width:220px;
+  background:#1a1a1a;
+  padding:20px;
+  min-height:100vh;
+}
+
+nav h2{
+  color:#ff6fae;
+  border-bottom:1px solid #444;
+}
+
+nav a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  margin:12px 0;
+}
+nav a:hover{
+  background:#330000;
+  padding-left:10px;
+  border-radius:4px;
+}
+
+/* SOCIAL */
+.social{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.social a{
+  width:40px;
+  height:40px;
+  background:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  transition:0.3s;
+}
+.social a:hover{
+  background:#ff1a8c;
+}
+.social img{ width:22px; }
+
+/* MAIN SECTION */
+section{
+  flex:1;
+  padding:30px;
+}
+
+/* CARD */
+.card{
+  background:#1e1e1e;
+  padding:22px;
+  margin-bottom:25px;
+  border-left:5px solid maroon;
+  border-radius:12px;
+  transition:0.3s;
+}
+.card:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 20px rgba(255,20,147,0.6);
+  border-left-color:#ff1a8c;
+}
+.card h2{
+  color:#ff6666;
+  margin-bottom:15px;
+}
+
+/* FORM STYLING */
+form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  opacity:0;
+  transform:translateX(-50px);
+}
+form input, form textarea{
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  background:#111;
+  color:white;
+  box-shadow:0 0 10px rgba(255,20,147,0.4);
+  font-size:14px;
+  resize:none;
+  transition:0.3s;
+}
+form input::placeholder, form textarea::placeholder{
+  color:#aaa;
+}
+form input:focus, form textarea:focus{
+  outline:none;
+  box-shadow:0 0 10px #ff1a8c, 0 0 20px #ff66aa;
+  border:1px solid #ff1a8c;
+}
+
+form button{
+  padding:12px 20px;
+  background:#ff1a8c;
+  border:none;
+  border-radius:25px;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 0 15px rgba(255,20,147,0.6);
+  transition:.3s;
+}
+form button:hover{
+  background:linear-gradient(90deg,#ff1a8c,#ff66aa,#ff1a8c);
+  animation: glow 1s infinite;
+  transform:scale(1.05);
+}
+
+/* CONTACT INFO */
+.contact-info{
+  margin-top:25px;
+}
+.contact-info p{
+  margin:6px 0;
+  font-size:14px;
+  color:#ffcccc;
+}
+.card.contact-info:hover{
+  transform:scale(1.02);
+  box-shadow:0 0 25px #ff1a8c,0 0 35px #ff66aa;
+  border-left-color:#ff66aa;
+}
+
+/* SUCCESS POPUP */
+#successPopup{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#ff1a8c;
+  color:white;
+  padding:15px 25px;
+  border-radius:12px;
+  box-shadow:0 0 20px #ff66aa;
+  font-weight:bold;
+  display:none;
+  z-index:1000;
+  animation: popupAnim 0.5s ease forwards;
+}
+
+@keyframes popupAnim{
+  0%{opacity:0; transform:translateY(-20px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+
+/* FOOTER */
+footer{
+  background:maroon;
+  text-align:center;
+  padding:12px;
+}
+
+/* ANIMATIONS */
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+@keyframes glow{
+  0%,100%{ box-shadow:0 0 10px #ff1a8c,0 0 20px #ff66aa; }
+  50%{ box-shadow:0 0 20px #ff1a8c,0 0 30px #ff66aa; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>★ CONTACT ME ★</h1>
+  <p>Get in touch or say hi!</p>
+</header>
+
+<div class="container">
+
+<nav>
+  <h2>Menu</h2>
+  <a href="main.html">About Me</a>
+  <a href="education.html">Education</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+
+  <h2>Social</h2>
+  <div class="social">
+    <a href="https://instagram.com" target="_blank"><img src="insta.png"></a>
+    <a href="https://tiktok.com" target="_blank"><img src="tiktok.png"></a>
+  </div>
+</nav>
+
+<section>
+
+<div class="card">
+  <h2>Send Me a Message 💌</h2>
+  <!-- Replace 'yourformid' with your actual Formspree ID -->
+  <form action="https://formspree.io/f/yourformid" method="POST" id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<div class="card contact-info">
+  <h2>Contact Info 📌</h2>
+  <p>Email:💌</p>
+  <a href="mailto:anisyaahmad19@gmail.com">
+                anisyaahmad19@gmail.com
+            </a>
+            <div class="skill-item contact-card">
+            📱 Phone <br>
+            <a href="tel:+601137907081">
+                +60 1137907081
+            </a>
+        </div>
+
+   <!-- LOCATION WITH DIRECT MAP -->
+        <div class="skill-item contact-card">
+            📍 Location <br>
+            <a href=https://www.google.com/maps/place/Taman+Kuala+Indah/data=!4m7!3m6!1s0x31d20100382ab421:0x49f5a8a8776a8eb6!8m2!3d2.3634145!4d102.0370711!16s%2Fg%2F11yc36q2vy!19sChIJIbQqOAAB0jERto5qd6io9Uk?authuser=0&hl=en&rclk=1 target="_blank">
+                Taman Kuala Indah, Melaka
+            </a>
+        </div>
+</div>
+
+</section>
+</div>
+
+<!-- Success Popup -->
+<div id="successPopup">Message Sent! 🎉</div>
+
+<!-- Confetti Canvas -->
+<canvas id="confettiCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;"></canvas>
+
+<footer>&copy; 2025 Aleeya Anisya</footer>
+
+<script>
+// Form fade-in animation
+document.addEventListener('DOMContentLoaded', ()=>{
+  const form = document.getElementById('contactForm');
+  setTimeout(()=>{
+    form.style.transition='all 1s ease';
+    form.style.opacity='1';
+    form.style.transform='translateX(0)';
+  },200);
+});
+
+// Form submit: show popup + confetti
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault(); // prevent page reload
+  showPopup();
+  launchConfetti();
+});
+
+// Success popup
+function showPopup(){
+  const popup = document.getElementById('successPopup');
+  popup.style.display='block';
+  setTimeout(()=>{popup.style.display='none';},3000);
+}
+
+// Simple confetti
+function launchConfetti(){
+  const canvas = document.getElementById('confettiCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const confettis = [];
+  const colors = ['#ff1a8c','#ff66aa','#ffccff','#ff4da6'];
+  for(let i=0;i<150;i++){
+    confettis.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height-50,
+      r: Math.random()*6+2,
+      d: Math.random()*10+2,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      tilt: Math.random()*10-10
+    });
+  }
+
+  let animationFrame;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    confettis.forEach(c=>{
+      ctx.beginPath();
+      ctx.fillStyle=c.color;
+      ctx.moveTo(c.x+c.tilt,c.y);
+      ctx.lineTo(c.x+c.tilt+5,c.y+c.r);
+      ctx.lineTo(c.x+c.tilt-5,c.y+c.r);
+      ctx.closePath();
+      ctx.fill();
+      c.y += c.d;
+      c.tilt += 0.1;
+      if(c.y>canvas.height) c.y = -10;
+    });
+    animationFrame=requestAnimationFrame(draw);
+  }
+  draw();
+  setTimeout(()=>{cancelAnimationFrame(animationFrame); ctx.clearRect(0,0,canvas.width,canvas.height);},3000);
+}
+</script>
+
+</body>
+</html>
+
+

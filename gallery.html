@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery – Aleeya Anisya</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+
+<header>
+  <h1>★ GALLERY ★</h1>
+  <p>Moments that shape who I am ✨</p>
+</header>
+
+<div class="container">
+
+<nav>
+  <h2>Menu</h2>
+  <a href="main.html">Home</a>
+  <a href="education.html">Education</a>
+  <a href="skills.html">Skills</a>
+  <a href="gallery.html" class="active">Gallery</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+
+<!-- ================= FAMILY ================= -->
+<div class="gallery-section reveal">
+  <div class="section-title">
+    <h2>Family</h2>
+    <span></span>
+  </div>
+  <p class="section-desc">My strongest pillar 🤍</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img src="family.jpeg">
+      <div class="overlay">Family Time</div>
+    </div>
+    <div class="gallery-card">
+      <img src="family2.jpeg">
+      <div class="overlay">Always Together</div>
+    </div>
+    <div class="gallery-card">
+      <img src="family3.jpeg">
+      <div class="overlay">My Home</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FRIENDS ================= -->
+<div class="gallery-section reveal">
+  <div class="section-title">
+    <h2>Friends</h2>
+    <span></span>
+  </div>
+  <p class="section-desc">People who colour my life ✨</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img src="friend.jpeg">
+      <div class="overlay">Best Moments</div>
+    </div>
+    <div class="gallery-card">
+      <img src="friend2.jpeg">
+      <div class="overlay">Laugh Together</div>
+    </div>
+    <div class="gallery-card">
+      <img src="friend3.jpeg">
+      <div class="overlay">Memories Made</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MOMENTS ================= -->
+<div class="gallery-section reveal">
+  <div class="section-title">
+    <h2>Moments</h2>
+    <span></span>
+  </div>
+  <p class="section-desc">Little moments, big meaning</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img src="moment.jpeg">
+      <div class="overlay">Captured</div>
+    </div>
+    <div class="gallery-card">
+      <img src="moment2.jpeg">
+      <div class="overlay">Happiness</div>
+    </div>
+    <div class="gallery-card">
+      <img src="moment3.jpeg">
+      <div class="overlay">Remembered</div>
+    </div>
+  </div>
+</div>
+
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 My Portfolio | Designed with 💗
+</footer>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+  const height = window.innerHeight;
+  reveals.forEach(r=>{
+    if(r.getBoundingClientRect().top < height - 120){
+      r.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>
+

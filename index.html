@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome 💌</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- CSS FILE -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="envelope" id="env">
+  <div class="letter">
+    <h1>Dear Visitor 💌</h1>
+    <p>
+      Welcome to my personal space.<br>
+      This is where my journey, passion,<br>
+      and little love for creativity begin.
+    </p>
+
+    <div class="signature">
+      — Aleeya Anisya
+    </div>
+
+    <a href="main.html" class="begin-btn">Click to Begin</a>
+  </div>
+
+  <div class="click-text">click the letter ✉</div>
+</div>
+
+<script>
+const envelope = document.getElementById("env");
+envelope.addEventListener("click", () => {
+  envelope.classList.toggle("open");
+});
+</script>
+
+</body>
+</html>

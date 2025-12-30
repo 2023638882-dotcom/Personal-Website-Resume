@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Aleeya Anisya</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<header>
+  <h1>★ CONTACT ME ★</h1>
+  <p>Say hi or send a message!</p>
+</header>
+
+<div class="main-container">
+
+<nav>
+  <h2>Menu</h2>
+  <a href="main.html">About Me</a>
+  <a href="education.html">Education</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="skills.html">Skills</a>
+  <a href="contact.html">Contact</a>
+
+  <h2>Social</h2>
+  <div class="social">
+    <a href="https://instagram.com/_anisyyamadd" target="_blank"><img src="insta.png" alt="Instagram"></a>
+    <a href="https://tiktok.com/@_1syaaa" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+  </div>
+</nav>
+
+<main>
+  <!-- SEND ME MESSAGE CARD -->
+  <div class="contact-card">
+    <h2>Send Me a Message 💌</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST" id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- CONTACT INFO BUTTON -->
+  <div class="contact-btn">📌 View My Contact Info</div>
+</main>
+
+</div>
+
+<!-- CONTACT INFO MODAL -->
+<div id="contactPopup" class="contact-modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="profile">
+      <img src="isya1.jpg" alt="Aleeya Anisya">
+      <h2>Aleeya Anisya</h2>
+      <p>Digital Portfolio / Student</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-icon">💌</div>
+        <div class="contact-text"><a href="mailto:anisyaahmad19@gmail.com">anisyaahmad19@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div class="contact-text"><a href="tel:+601137907081">+60 1137907081</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-text"><a href="https://maps.app.goo.gl/LcwPMr3j8S9fPwBD6" target="_blank">Taman Kuala Indah, Melaka</a></div>
+      <!-- MAP IMAGE -->
+<div class="map-container">
+  <img src="maps.png" alt="Taman Kuala Indah Map">
+</div>
+
+      </div>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SUCCESS POPUP -->
+<div id="successPopup">Message Sent! 🎉</div>
+
+<!-- CANVAS FOR CONFETTI -->
+<canvas id="confettiCanvas"></canvas>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 My Portfolio | Designed with 💗
+</footer>
+
+<script>
+/* ---------- FORM SUBMIT WITH CONFETTI ---------- */
+const form = document.getElementById('contactForm');
+const success = document.getElementById('successPopup');
+const confettiCanvas = document.getElementById('confettiCanvas');
+const ctx = confettiCanvas.getContext('2d');
+
+let confettiParticles = [];
+
+function resizeCanvas(){
+  confettiCanvas.width = window.innerWidth;
+  confettiCanvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+class ConfettiParticle{
+  constructor(){
+    this.x = Math.random()*confettiCanvas.width;
+    this.y = Math.random()*-confettiCanvas.height;
+    this.size = 8 + Math.random()*8;
+    this.speed = 2 + Math.random()*3;
+    this.angle = Math.random()*360;
+    this.color = `hsl(${Math.random()*360}, 100%, 50%)`;
+  }
+  update(){
+    this.y += this.speed;
+    this.x += Math.sin(this.angle*Math.PI/180)*2;
+    this.angle += 2;
+    if(this.y>confettiCanvas.height) this.y=-10;
+  }
+  draw(){
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.x,this.y,this.size,this.size);
+  }
+}
+
+function createConfetti(){
+  confettiParticles = [];
+  for(let i=0;i<150;i++) confettiParticles.push(new ConfettiParticle());
+  requestAnimationFrame(drawConfetti);
+}
+
+function drawConfetti(){
+  ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height);
+  confettiParticles.forEach(p=>{
+    p.update();
+    p.draw();
+  });
+  requestAnimationFrame(drawConfetti);
+}
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  form.reset();
+  success.style.display='block';
+  createConfetti();
+  setTimeout(()=>{ success.style.display='none'; confettiParticles=[]; ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height); }, 4000);
+});
+
+/* ---------- CONTACT MODAL ---------- */
+const contactBtn = document.querySelector('.contact-btn');
+const contactPopup = document.getElementById('contactPopup');
+const closeBtn = document.querySelector('.close-btn');
+
+contactBtn.addEventListener('click', ()=>{ contactPopup.style.display='flex'; });
+closeBtn.addEventListener('click', ()=>{ contactPopup.style.display='none'; });
+window.addEventListener('click', (e)=>{ if(e.target===contactPopup) contactPopup.style.display='none'; });
+</script>
+
+</body>
+</html>

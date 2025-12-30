@@ -1,0 +1,94 @@
+/* add this at the top */
+#confettiCanvas{ position:fixed; top:0; left:0; pointer-events:none; z-index:1002; }
+
+/* rest of CSS sama macam sebelumnya */
+
+/* GLOBAL */
+html, body { height:100%; margin:0; font-family:'Rajdhani', sans-serif; background:linear-gradient(-45deg,#1a0000,#330000,#1a0011,#330011); background-size:400% 400%; animation: gradientBG 15s ease infinite; color:white; display:flex; flex-direction:column; }
+.main-container{ display:flex; flex:1; flex-direction:row; min-height:100%; }
+
+/* HEADER */
+header{ background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(120,0,0,0.8)), url('porshe.jpg') center/cover no-repeat; padding:80px 20px; text-align:center; border-bottom:3px solid #ff1a8c;}
+header h1{ font-family:'Orbitron',sans-serif; font-size:38px; letter-spacing:3px; }
+header p{ color:#ffcccc; font-style:italic; }
+
+/* NAV */
+nav{ width:220px; background:#1a1a1a; padding:20px; }
+nav h2{ color:#ff6fae; border-bottom:1px solid #444; }
+nav a{ display:block; color:white; text-decoration:none; margin:12px 0; }
+nav a:hover{ background:#330000; padding-left:10px; border-radius:4px; }
+.social{ display:flex; gap:10px; margin-top:10px; }
+.social a{ width:40px; height:40px; background:#111; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:0.3s; }
+.social a:hover{ background:#ff1a8c; }
+.social img{ width:22px; }
+
+/* MAIN CONTENT */
+main{ flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:50px 20px; }
+
+/* SEND ME MESSAGE CARD */
+.contact-card{
+  max-width:700px; width:100%;
+  padding:50px 40px;
+  background: rgba(20,0,20,0.9);
+  border-radius:20px;
+  box-shadow:0 0 30px #ff66aa,0 0 50px #ff1a8c, 0 15px 60px rgba(255,26,140,0.2);
+  text-align:center;
+  border:2px solid #ff1a8c;
+  margin-bottom:40px;
+}
+.contact-card h2{ font-size:28px; color:#ff66aa; margin-bottom:25px; font-family:'Orbitron', sans-serif; letter-spacing:1px; }
+.contact-card form input,
+.contact-card form textarea{ width:100%; padding:14px; margin-bottom:15px; border-radius:12px; border:2px solid transparent; background: rgba(30,0,30,0.7); color:white; font-size:15px; box-shadow:0 0 12px #ff66aa; transition: all 0.3s ease; }
+.contact-card form input:focus,
+.contact-card form textarea:focus{ outline:none; border:2px solid #ff1a8c; box-shadow:0 0 18px #ff1a8c,0 0 28px #ff66aa; }
+.contact-card form button{ padding:14px 0; width:50%; border-radius:30px; border:none; background: linear-gradient(90deg,#ff1a8c,#ff66aa,#ff1a8c); color:white; cursor:pointer; font-size:16px; font-weight:600; box-shadow:0 0 25px #ff66aa,0 0 35px #ff1a8c; transition: all 0.3s ease; }
+.contact-card form button:hover{ transform: scale(1.05); box-shadow:0 0 35px #ff66aa,0 0 50px #ff1a8c; }
+
+/* CONTACT INFO MODAL */
+.contact-btn{ position:fixed; right:25px; top:50%; transform:translateY(-50%); background:#7b0741; padding:12px 18px; border-radius:50px; cursor:pointer; box-shadow:0 0 15px #ff66aa; z-index:999; transition:.3s; }
+.contact-btn:hover{ transform:translateY(-50%) scale(1.1); box-shadow:0 0 25px #e387b5,0 0 35px #f1accb; }
+
+.contact-modal{ display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:1000; }
+.modal-content{ background: linear-gradient(145deg,#1a1a1a,#111111); border-radius:15px; padding:25px; max-width:400px; width:90%; text-align:center; box-shadow:0 0 25px #ff66aa,0 0 40px #ff1a8c; position:relative; }
+.modal-content .close-btn{ position:absolute; top:12px; right:15px; font-size:22px; cursor:pointer; color:#ff1a8c; transition:.3s; }
+.modal-content .close-btn:hover{ color:#ff66aa; transform:scale(1.2); }
+
+.profile img{ width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:12px; border:3px solid #ff1a8c; }
+.profile h2{ margin:0; color:#ff66aa; font-size:24px; }
+.profile p{ margin:5px 0 15px 0; font-size:14px; color:#ffccc; }
+
+/* CONTACT GRID */
+.contact-grid{ display:grid; gap:12px; }
+.contact-item{ display:flex; align-items:center; background:linear-gradient(145deg,#1a1a1a,#111111); padding:10px; border-left:4px solid #ff1a8c; border-radius:12px; box-shadow:0 0 12px #ff66aa; transition:.3s; }
+.contact-item:hover{ transform:translateY(-3px); box-shadow:0 0 25px #ff1a8c,0 0 35px #ff66aa; border-left-color:#ff66aa; }
+.contact-icon{ font-size:24px; margin-right:10px; text-shadow:0 0 8px #ff66aa; }
+.contact-text a{ color:#ffb3d9; text-decoration:none; transition:.3s; }
+.contact-text a:hover{ color:#ff1a8c;text-shadow:0 0 10px #ff66aa; }
+
+.map-container{
+  margin-top:20px;
+  text-align:center;
+}
+.map-container img{
+  width:100%;
+  max-width:360px;
+  border-radius:12px;
+  box-shadow:0 0 20px #ff66aa,0 0 35px #ff1a8c;
+  border:2px solid #ff1a8c;
+}
+
+
+/* SUCCESS POPUP */
+#successPopup{ position:fixed; top:20px; right:20px; background:#ff1a8c; color:white; padding:12px 20px; border-radius:12px; display:none; z-index:1001; }
+
+/* FOOTER */
+footer{ background: linear-gradient(145deg,#1a0000,#330000); color: #ffb3d9; text-align:center; padding:20px 10px; border-top: 2px solid #ff1a8c; font-size:14px; display:flex; flex-direction: column; align-items: center; gap:8px; }
+footer p{ margin:0; }
+footer .footer-social{ display:flex; gap:12px; }
+footer .footer-social a{ width:32px; height:32px; display:flex; align-items:center; justify-content:center; background:#111; border-radius:50%; transition:0.3s; }
+footer .footer-social a:hover{ background:#ff1a8c; transform:scale(1.1); }
+footer .footer-social img{ width:18px; }
+
+/* ANIMATIONS */
+@keyframes gradientBG{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+

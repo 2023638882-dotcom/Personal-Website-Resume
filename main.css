@@ -452,6 +452,45 @@ footer{ background:linear-gradient(to right, maroon, #330000); text-align:center
   transform:translateY(-2px);
 }
 
+/* ================= BACK TO TOP ================= */
+#backToTop{
+  position:fixed;
+  bottom:26px;
+  right:26px;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  font-size:22px;
+  font-weight:700;
+  color:#fff;
+
+  background:linear-gradient(45deg, maroon, hotpink);
+  box-shadow:
+    0 0 15px rgba(255,20,147,0.6),
+    0 0 35px rgba(255,20,147,0.3);
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(20px);
+  transition:0.4s ease;
+  z-index:9999;
+}
+
+#backToTop:hover{
+  transform:translateY(-6px) scale(1.1);
+  box-shadow:
+    0 0 25px rgba(255,20,147,0.9),
+    0 0 55px rgba(255,20,147,0.5);
+}
+
+/* SHOW BUTTON */
+#backToTop.show{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
 /* ANIMATIONS */
 @keyframes diaryReveal{
   from{
@@ -479,3 +518,4 @@ footer{ background:linear-gradient(to right, maroon, #330000); text-align:center
 
 /* ================= FADE ================= */
 @keyframes fadeUp{ from{ opacity:0; transform:translateY(20px); } to{ opacity:1; transform:translateY(0); } }
+
